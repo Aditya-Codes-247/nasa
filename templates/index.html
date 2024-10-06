@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Orrery Web Game</title>
   <!-- Link to the CSS file -->
-  <link rel="stylesheet" href="{{ url_for('static', path='css/styles.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', path='/css/styles.css') }}">
 </head>
 
 <body>
@@ -46,17 +46,17 @@
 
   <!-- Start Game Button (Positioned Below the Solar System) -->
   <div class="start-button-container">
-    <a href="{{ url_for('start_game') }}" class="start-button">Start Game</a>
+    <a href="{{ url_for('game_selection') }}" class="start-button">Start Game</a>
   </div>
   <div class="start-button-container">
-    <a href="{{ url_for('start_game') }}" class="start-button">Travel </a>
-  </div>
-  <div class="start-button-container">
-    <a href="{{ url_for('start_game') }}" class="start-button">Teleport to Planet</a>
+    <a href="{{ url_for('game_selection') }}" class="start-button">Travel</a>
   </div>
 
+  <div class="start-button-container">
+    <a href="{{ url_for('main_menu') }}" class="start-button">Teleport</a>
+  </div>  
   <!-- Link to the JS file -->
-  <script src="{{ url_for('static', path='js/script.js') }}"></script>
+  <script src="{{ url_for('static', path='/js/script.js') }}"></script>
 
 </body>
 
