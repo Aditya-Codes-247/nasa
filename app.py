@@ -39,7 +39,4 @@ async def game3(request: Request):
 async def main_menu(request: Request):  # Renamed to avoid conflict
     return templates.TemplateResponse("MainMenu.html", {"request": request})
     
-@app.get("/wormhole", response_class=HTMLResponse)
-async def wormhole(request: Request):
-    return templates.TemplateResponse("Worm.html", {"request": request})
 # Run the app using: uvicorn app:app --reload
