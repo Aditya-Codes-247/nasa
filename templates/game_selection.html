@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Select a Game</title>
+  <link rel="stylesheet" href="{{ url_for('static', path='/css/styles.css') }}">
+</head>
+
+<body>
+
+  <div class="game-selection-container">
+    <h1>Select a Game</h1>
+    <div class="game-buttons">
+      <a href="{{ url_for('game1') }}" class="game-button">Play Game 1</a>
+      <a href="{{ url_for('game2') }}" class="game-button">Play Game 2</a>
+      <a href="{{ url_for('game3') }}" class="game-button">Play Game 3</a>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', path='/js/script.js') }}"></script>
+
+</body>
+
+</html>

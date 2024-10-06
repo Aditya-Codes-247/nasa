@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Game</title>
+    <style>
+        /* Ensure no space around the iframe */
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+        }
+
+        /* Center the game title and make it bold */
+        h1 {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            text-align: center;
+            color: white;
+            background-color: black;
+            padding: 10px;
+            font-size: 2em;
+            z-index: 10;
+            margin: 0;
+        }
+
+        /* Make iframe full screen */
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>My Space Game</h1>
+    <iframe
+        allow="fullscreen; autoplay; encrypted-media" 
+        src="https://games.construct.net/24605/latest" 
+        allowfullscreen="true" 
+        msallowfullscreen="true" 
+        mozallowfullscreen="true" 
+        webkitallowfullscreen="true" 
+        allowpaymentrequest="false" 
+        referrerpolicy="unsafe-url" 
+        sandbox="allow-same-origin allow-forms allow-scripts allow-pointer-lock allow-orientation-lock allow-popups" 
+        scrolling="no">
+    </iframe>
+</body>
+</html>
