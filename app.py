@@ -41,5 +41,5 @@ async def main_menu(request: Request):  # Renamed to avoid conflict
     
 @app.get("/wormhole", response_class=HTMLResponse)
 async def wormhole(request: Request):
-    return templates.TemplateResponse("Wormhole.html", {"request": request})
+    return templates.TemplateResponse("Worm.html", {"request": request})
 # Run the app using: uvicorn app:app --reload
