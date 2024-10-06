@@ -49,7 +49,7 @@
     <a href="{{ url_for('game_selection') }}" class="start-button">Start Game</a>
   </div>
   <div class="start-button-container">
-    <button onclick="startWormholeTravel()" class="start-button">Travel</button>
+    <a href="{{ url_for('wormhole') }}" class="start-button">Travel</a>
   </div>
 
   <div class="start-button-container">
@@ -58,17 +58,6 @@
 
   <!-- Link to the JS file -->
   <script src="{{ url_for('static', path='/js/script.js') }}"></script>
-  <script>
-    function startWormholeTravel() {
-      // Open the wormhole animation in a new tab
-      window.open("https://bobbyroe.github.io/flythru-wireframe-wormhole/", "_blank");
-
-      // After 1.5 minutes (90 seconds), redirect to the main menu
-      setTimeout(function() {
-        window.location.href = "{{ url_for('main_menu') }}";
-      }, 3000);  // 1.5 minutes = 90000 milliseconds
-    }
-  </script>
 
 </body>
 
