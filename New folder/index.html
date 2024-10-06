@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Quiz</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Orbitron', sans-serif;
+            background-image: url('https://www.nasa.gov/sites/default/files/thumbnails/image/pia24587.jpg'); /* High-res space background */
+            background-size: cover;
+            color: white;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 15px;
+        }
+        h1 {
+            font-size: 3rem;
+        }
+        .question {
+            font-size: 1.5rem;
+            margin: 20px 0;
+        }
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .option-btn {
+            padding: 15px;
+            background: #007bff;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            color: white;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .option-btn:hover {
+            background: #0056b3;
+        }
+        #next-btn {
+            margin-top: 20px;
+            padding: 15px;
+            font-size: 1.2rem;
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: none;
+        }
+        #score {
+            font-size: 1.8rem;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Space Quiz</h1>
+    <div id="quiz-container">
+        <div id="question" class="question"></div>
+        <div id="options" class="options"></div>
+        <button id="next-btn" onclick="nextQuestion()">Next Question</button>
+    </div>
+    <div id="score"></div>
+</div>
+
+<script>
+    let currentQuestionIndex = 0;
+    let score = 0;
+    let questions = [];
+
+    async function fetchQuestions() {
+        const response = await fetch('http://127.0.0.1:8000/questions');
+        questions = await response.json();
+        loadQuestion();
+    }
+
+    function loadQuestion() {
+        document.getElementById('next-btn').style.display = 'none';
+        const questionData = questions[currentQuestionIndex];
+        document.getElementById('question').textContent = questionData.question;
+        const optionsDiv = document.getElementById('options');
+        optionsDiv.innerHTML = ''; // Clear previous options
+
+        questionData.options.forEach(option => {
+            const button = document.createElement('button');
+            button.classList.add('option-btn');
+            button.textContent = option;
+            button.onclick = () => selectOption(option);
+            optionsDiv.appendChild(button);
+        });
+    }
+
+    function selectOption(selectedOption) {
+        const correctAnswer = questions[currentQuestionIndex].answer;
+        if (selectedOption === correctAnswer) {
+            score++;
+        }
+        document.getElementById('next-btn').style.display = 'block';
+    }
+
+    function nextQuestion() {
+        currentQuestionIndex++;
+        if (currentQuestionIndex < questions.length) {
+            loadQuestion();
+        } else {
+            showScore();
+        }
+    }
+
+    function showScore() {
+        document.getElementById('quiz-container').style.display = 'none';
+        document.getElementById('score').textContent = `Your final score is ${score}/${questions.length}`;
+    }
+
+    // Fetch and load questions when the page loads
+    fetchQuestions();
+</script>
+
+</body>
+</html>

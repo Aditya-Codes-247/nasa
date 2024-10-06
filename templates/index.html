@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Orrery Web Game</title>
+  <!-- Link to the CSS file -->
+  <link rel="stylesheet" href="{{ url_for('static', path='/css/styles.css') }}">
+</head>
+
+<body>
+
+  <!-- Star Field Background -->
+  <div class="star-field"></div>
+
+  <!-- Orrery Web Game Heading Section -->
+  <div class="container">
+    <header>
+      <span class="greetings">Greetings from NASA</span>
+    </header>
+
+    <div class="title">
+      <h1>Orrery Web Game</h1>
+      <p class="subtitle">a message from earth</p>
+    </div>
+
+    <footer>
+      <div class="footer-line"></div>
+    </footer>
+  </div>
+
+  <!-- Solar System Container -->
+  <div class="solar-system">
+    <div class="sun"></div>
+    <div class="planet mercury"></div>
+    <div class="planet venus"></div>
+    <div class="planet earth"></div>
+    <div class="planet mars"></div>
+    <div class="planet jupiter"></div>
+    <div class="planet saturn"></div>
+    <div class="planet uranus"></div>
+    <div class="planet neptune"></div>
+    <div class="planet pluto"></div>
+  </div>
+
+  <!-- Start Game Button (Positioned Below the Solar System) -->
+  <div class="start-button-container">
+    <a href="{{ url_for('start_game') }}" class="start-button">Start Game</a>
+  </div>
+
+  <!-- Link to the JS file -->
+  <script src="{{ url_for('static', path='/js/script.js') }}"></script>
+
+</body>
+
+</html>

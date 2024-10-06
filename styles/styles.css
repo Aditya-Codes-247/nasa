@@ -1,0 +1,40 @@
+/* Make sure the body takes up the full screen */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+.background-container {
+    /* Use the image you provided as background */
+    background-image: url('D:/projects/nasa 24/images/bg1.png');
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    position: relative;
+}
+
+.svg-container {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    text-align: center;
+}
+
+.svg-text {
+    /* Customize SVG styling */
+    max-width: 90%;
+    height: auto;
+}
+
+.content {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+/* Styling for scroll buttons, icons, etc. */
