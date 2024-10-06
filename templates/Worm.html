@@ -11,14 +11,22 @@
     </style>
     <script type="importmap">
       {
-				"imports": {
-					"three": "https://cdn.jsdelivr.net/npm/three@0.161/build/three.module.js",
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.161/build/three.module.js",
           "jsm/": "https://cdn.jsdelivr.net/npm/three@0.161/examples/jsm/"
         }
-			}
+      }
     </script>
   </head>
   <body>
     <script type="module" src="index.js"></script>
+
+    <!-- Automatic redirect script -->
+    <script>
+      // Redirect to the main menu after 1.5 minutes
+      setTimeout(function() {
+        window.location.href = "{{ url_for('main_menu') }}";
+      }, 90000);  // 1.5 minutes = 90000 milliseconds
+    </script>
   </body>
 </html>
