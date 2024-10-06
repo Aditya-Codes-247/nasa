@@ -123,14 +123,9 @@ function handleWindowResize() {
   renderer.setSize(window.innerWidth, window.innerHeight);
 }
 window.addEventListener('resize', handleWindowResize, false);
-    </script>
-
-    <!-- Automatic redirect script -->
-    <script>
-      // Redirect to the main menu after 1.5 minutes
       setTimeout(function() {
         window.location.href = "{{ url_for('main_menu') }}";
-      }, 3000);  // 1.5 minutes = 90000 milliseconds
+      }, 15000);  // 1.5 minutes = 90000 milliseconds
     </script>
   </body>
 </html>
