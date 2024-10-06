@@ -8,7 +8,7 @@ body, html {
 
 .background-container {
     /* Use the image you provided as background */
-    background-image: url('D:/projects/nasa 24/images/bg1.png');
+    background-image: url('/static/images/bg2.PNG');
     background-size: cover;
     background-position: center;
     height: 100%;
